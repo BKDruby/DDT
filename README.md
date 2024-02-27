@@ -1,24 +1,23 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install project
 
-Things you may want to cover:
+`bundle install && rails db:migrate`
 
-* Ruby version
+## Run application
 
-* System dependencies
+`rails s`
 
-* Configuration
+## Request example
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+``````
+curl --location 'localhost:3000/api/v1/pages' \
+--header 'Content-Type: application/json' \
+--data '{ 
+"url": "https://www.alza.cz/aeg-7000-prosteam-lfr73964cc-d7635493.htm", "fields": { 
+"meta": ["keywords", "twitter:image"],
+"price": ".price-box__prce", 
+"rating_count": ".ratingCount", 
+"rating_value": ".ratingValue" 
+} 
+} '
